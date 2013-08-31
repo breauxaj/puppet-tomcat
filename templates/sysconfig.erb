@@ -1,0 +1,10 @@
+<% if runas != "" -%>
+RUNAS="<%= runas %>"
+<% else -%>
+RUNAS="tomcat"
+<% end -%>
+<% if catalina_home != "" -%>
+CATALINA_HOME="<%= catalina_home %>"
+<% else -%>
+CATALINA_HOME="/usr/local/tomcat"
+<% end -%>
