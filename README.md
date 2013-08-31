@@ -6,14 +6,17 @@ JavaServer Pages technologies.
 
 Samples
 -------
-
+```
 include tomcat
 include tomcat::native
-
+```
+```
 tomcat::service { 'default': ensure => running, enable => true }
-
+```
+```
 tomcat::config { 'default':
   runas         => 'deploy',
   catalina_home => '/usr/local/tomcat',
   catalina_base => '/var/tomcat',
 }
+```
