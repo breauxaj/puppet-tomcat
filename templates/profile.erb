@@ -1,5 +1,8 @@
 <% if catalina_home != "" -%>
-export TOMCAT_HOME=<%= catalina_home %>
+export TOMCAT_HOME="<%= catalina_home %>"
 export CATALINA_HOME=$TOMCAT_HOME
+<% end -%>
+<% if catalina_base != "" -%>
+export CATALINA_BASE="<%= catalina_base %>"
 <% end -%>
 export CATALINA_PID=/var/run/tomcat.pid
