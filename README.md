@@ -8,6 +8,8 @@ Samples
 -------
 ```
 include tomcat
+```
+```
 include tomcat::native
 ```
 ```
