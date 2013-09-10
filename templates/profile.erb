@@ -1,13 +1,13 @@
 export CATALINA_PID=/var/run/tomcat.pid
-<% if catalina_home != "" -%>
-export TOMCAT_HOME="<%= catalina_home %>"
+<% if @catalina_home and ! @catalina_home.empty?  -%>
+export TOMCAT_HOME="<%= @catalina_home %>"
 export CATALINA_HOME=$TOMCAT_HOME
 <% end -%>
-<% if catalina_base != "" -%>
-export CATALINA_BASE="<%= catalina_base %>"
+<% if @catalina_base and ! @catalina_base.empty?  -%>
+export CATALINA_BASE="<%= @catalina_base %>"
 <% end -%>
-<%if java_opts != "" -%>
-<% java_opts.each do |j| -%>
+<%if @java_opts and ! @java_opts.empty?  -%>
+<% [@java_opts].each do |j| -%>
 JAVA_OPTS="$JAVA_OPTS <%= j %>"
 <% end -%>
 export JAVA_OPTS
