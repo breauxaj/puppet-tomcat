@@ -1,5 +1,5 @@
-export CATALINA_PID=/var/run/tomcat.pid
 <% if @catalina_home and ! @catalina_home.empty?  -%>
+export CATALINA_PID="<%= @catalina_home %>/logs/tomcat.pid"
 export TOMCAT_HOME="<%= @catalina_home %>"
 export CATALINA_HOME=$TOMCAT_HOME
 <% end -%>
