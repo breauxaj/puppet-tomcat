@@ -17,7 +17,7 @@ else
   CATALINA_HOME=/usr/local/tomcat
 fi
 
-PID=/var/run/tomcat.pid
+PID=$CATALINA_HOME/logs/tomcat.pid
 
 # Functions for start/stop
 start() {
