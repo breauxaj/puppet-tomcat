@@ -4,20 +4,40 @@ define tomcat::instance (
   $catalina_home = '/usr/local/tomcat',
   $catalina_base = '/var/tomcat'
 ) {
-  file { '/usr/local/bin/instance.sh':
-    ensure  => present,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0744',
-    content => template('tomcat/instance.erb'),
+  $paths = [
+    '/var/log/tomcat',
+    "${catalina_base}/bin",
+    "${catalina_base/shared",
+    "${catalina_base/shared/classes",
+    "${catalina_base/shared/lib",
+    "${catalina_base/temp",
+    "${catalina_base/webapps",
+    "${catalina_base/work'
+  ]
+
+  file { $paths:
+    ensure => directory,
+    owner  => $owner,
+    group  => $group,
+    mode   => '0755',
   }
 
-  exec { 'deploy-tomcat':
-    path    => '/bin:/usr/bin',
-    command => "virtualenv --no-site-packages ${path}/${name} ; chown -R ${user}:${group} ${path}/${name}",
-    cwd     => $path,
-    creates => "${path}/${name}/bin/python",
-    require => File['/usr/local/bin/instance.sh'],
+  file { confs:
+    ensure  => present,
+    path    => "${catalina_base}/conf",
+    owner   => $owner,
+    group   => $group,
+    mode    => '0664',
+    replace => 'no',
+    source  => "${catalina_home}/conf",
+    recurse => true,
+  }
+
+  file { "${catalina_base}/logs":
+    ensure => 'link',
+    owner  => $owner,
+    group  => $group,
+    target => '/var/log/tomcat',
   }
 
 }
