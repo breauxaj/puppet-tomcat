@@ -51,3 +51,11 @@ tomcat::config { 'default':
   ]
 }
 ```
+```
+tomcat::instance { 'default':
+  owner         => 'deploy',
+  group         => 'deploy',
+  catalina_home => '/usr/local/tomcat',
+  catalina_base => '/var/tomcat'
+}
+```
