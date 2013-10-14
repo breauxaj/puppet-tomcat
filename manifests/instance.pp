@@ -6,12 +6,12 @@ define tomcat::instance (
 ) {
   $paths = [
     '/var/log/tomcat',
-    "${catalina_base/shared",
-    "${catalina_base/shared/classes",
-    "${catalina_base/shared/lib",
-    "${catalina_base/temp",
-    "${catalina_base/webapps",
-    "${catalina_base/work'
+    "${catalina_base}/shared",
+    "${catalina_base}/shared/classes",
+    "${catalina_base}/shared/lib",
+    "${catalina_base}/temp",
+    "${catalina_base}/webapps",
+    "${catalina_base}/work"
   ]
 
   file { $paths:
@@ -21,7 +21,7 @@ define tomcat::instance (
     mode   => '0755',
   }
 
-  file { confs:
+  file { 'confs':
     ensure  => present,
     path    => "${catalina_base}/conf",
     owner   => $owner,
