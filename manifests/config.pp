@@ -18,12 +18,12 @@ define tomcat::config (
   }
 
   file { '/etc/profile.d/tomcat.sh':
-    ensure => present,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
-    source => template('tomcat/profile.erb'),
-    notify => Service[$service],
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => template('tomcat/profile.erb'),
+    notify  => Service[$service],
   }
 
 }
