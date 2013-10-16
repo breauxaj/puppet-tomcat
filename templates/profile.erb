@@ -8,8 +8,8 @@ export CATALINA_HOME=$TOMCAT_HOME
 export CATALINA_BASE="<%= @catalina_base %>"
 <% end -%>
 <%if @java_opts and ! @java_opts.empty?  -%>
-<% [@java_opts].each do |j| -%>
-JAVA_OPTS="$JAVA_OPTS <%= j %>"
+<% [@java_opts].each do |jo| -%>
+JAVA_OPTS="$JAVA_OPTS <%= jo %>"
 <% end -%>
 export JAVA_OPTS
 <% end -%>
