@@ -1,6 +1,4 @@
 class tomcat {
-  Class['tomcat']->Class['java']
-
   file { '/etc/init.d/tomcat':
     ensure => present,
     owner  => 'root',
