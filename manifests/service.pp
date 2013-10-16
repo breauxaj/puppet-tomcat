@@ -7,8 +7,9 @@ define tomcat::service (
   }
 
   service { $service:
-    ensure    => $ensure,
-    enable    => $enable,
+    ensure  => $ensure,
+    enable  => $enable,
+    require => File['/etc/init.d/tomcat'],
   }
 
 }
