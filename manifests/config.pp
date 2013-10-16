@@ -1,7 +1,8 @@
 define tomcat::config (
   $runas = 'deploy',
   $catalina_home = '/usr/local/tomcat',
-  $catalina_base = '/usr/local/tomcat'
+  $catalina_base = '/usr/local/tomcat',
+  $java_opts = ''
 ) {
   $service = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => 'tomcat',
