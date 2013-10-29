@@ -1,13 +1,13 @@
 # MANAGED BY PUPPET!
-<% if @catalina_home and ! @catalina_home.empty?  -%>
-export CATALINA_PID="<%= @catalina_home %>/logs/tomcat.pid"
-export TOMCAT_HOME="<%= @catalina_home %>"
+<% if catalina_home and ! catalina_home.empty?  -%>
+export CATALINA_PID="<%= catalina_home %>/logs/tomcat.pid"
+export TOMCAT_HOME="<%= catalina_home %>"
 export CATALINA_HOME=$TOMCAT_HOME
 <% end -%>
-<% if @catalina_base and ! @catalina_base.empty?  -%>
-export CATALINA_BASE="<%= @catalina_base %>"
+<% if catalina_base and ! catalina_base.empty?  -%>
+export CATALINA_BASE="<%= catalina_base %>"
 <% end -%>
-<%if @java_opts and ! @java_opts.empty?  -%>
-JAVA_OPTS="<%= [@java_opts].join(" ") %>"
+<%if java_opts and ! java_opts.empty?  -%>
+JAVA_OPTS="<%= java_opts.join(" ") %>"
 export JAVA_OPTS
 <% end -%>

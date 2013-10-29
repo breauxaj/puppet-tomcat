@@ -1,11 +1,11 @@
 # MANAGED BY PUPPET!
-<% if @runas and ! @runas.empty?  -%>
-RUNAS="<%= @runas %>"
+<% if runas and ! runas.empty?  -%>
+RUNAS="<%= runas %>"
 <% else -%>
 RUNAS="tomcat"
 <% end -%>
-<% if @catalina_home and ! @catalina_home.empty?  -%>
-CATALINA_HOME="<%= @catalina_home %>"
+<% if catalina_home and ! catalina_home.empty?  -%>
+CATALINA_HOME="<%= catalina_home %>"
 <% else -%>
 CATALINA_HOME="/usr/local/tomcat"
 <% end -%>
