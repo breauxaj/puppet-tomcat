@@ -1,6 +1,6 @@
 define tomcat::users (
   $users = '',
-  $catalina_home = '',
+  $catalina_home = ''
 ) {
   file { "${catalina_home}/conf/tomcat-users.xml":
     ensure  => present,
