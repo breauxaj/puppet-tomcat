@@ -21,9 +21,7 @@
 <tomcat-users>
 <% if users and ! users.empty? -%>
 <% users.sort_by {|key, value| key}.each do |key, value| -%>
-  <user username="<%= value['username'] %>" \
-        password="<%= value['password'] %>" \
-        roles="<%= value['roles'] %>" />
+  <user username="<%= value['username'] %>" password="<%= value['password'] %>" roles="<%= value['roles'] %>" />
 <% end -%>
 <% end -%>
 </tomcat-users>
