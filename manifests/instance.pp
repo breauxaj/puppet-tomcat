@@ -40,4 +40,12 @@ define tomcat::instance (
     target => '/var/log/tomcat',
   }
 
+  file { "${catalina_base}/probe.war":
+    ensure => present,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    source => 'puppet:///modules/tomcat/probe.war',
+  }
+
 }
