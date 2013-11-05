@@ -52,6 +52,16 @@ tomcat::config { 'default':
 }
 ```
 ```
+$users = {
+  u1 => { username => 'admin', password => 'admin', roles => 'admin,manager' },
+}
+```
+```
+tomcat::users { 'default':
+  users         => $users,
+  catalina_home => '/var/tomcat',
+}
+```
 tomcat::instance { 'default':
   owner         => 'deploy',
   group         => 'deploy',
