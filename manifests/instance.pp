@@ -40,7 +40,7 @@ define tomcat::instance (
     target => '/var/log/tomcat',
   }
 
-  file { "${catalina_base}/probe.war":
+  file { "${catalina_base}/webapps/probe.war":
     ensure => present,
     owner  => 'root',
     group  => 'root',
