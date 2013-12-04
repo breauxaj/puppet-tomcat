@@ -9,7 +9,7 @@ define tomcat::service (
   service { $service:
     ensure  => $ensure,
     enable  => $enable,
-    status  => 'ps -ef | grep java',
+    status => '/sbin/service tomcat status | grep "is running"',
     require => File['/etc/init.d/tomcat'],
   }
 
