@@ -57,6 +57,10 @@ case "$1" in
     sleep 3
     start
     ;;
+  status)
+	  status java
+	  RETVAL=$?
+	  ;;
   *)
     echo $"Usage: $0 {start|stop|restart}"
     exit 1
