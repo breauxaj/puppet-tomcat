@@ -1,8 +1,10 @@
-class tomcat::native {
+class tomcat::native (
+  $ensure = 'latest'
+){
   $required = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => 'tomcat-native',
   }
 
-  package { $required: ensure => latest }
+  package { $required: ensure => $ensure }
 
 }
