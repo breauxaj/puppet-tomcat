@@ -7,9 +7,7 @@ define tomcat::instance (
   $paths = [
     '/var/log/tomcat',
     "${catalina_base}",
-    "${catalina_base}/shared",
-    "${catalina_base}/shared/classes",
-    "${catalina_base}/shared/lib",
+    "${catalina_base}/lib",
     "${catalina_base}/temp",
     "${catalina_base}/webapps",
     "${catalina_base}/work"
