@@ -6,6 +6,11 @@ export CATALINA_HOME=$TOMCAT_HOME
 <% if catalina_base and ! catalina_base.empty?  -%>
 export CATALINA_BASE="<%= catalina_base %>"
 <% end -%>
+<% if catalina_base and ! catalina_base.empty?  -%>
+CATALINA_PID="<%= catalina_base %>/logs/tomcat.pid"
+<% else -%>
+CATALINA_PID="<%= catalina_home %>/logs/tomcat.pid"
+<% end -%>
 <%if java_opts and ! java_opts.empty?  -%>
 JAVA_OPTS="<%= java_opts.join(" ") %>"
 export JAVA_OPTS
