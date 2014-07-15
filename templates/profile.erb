@@ -1,6 +1,5 @@
 # MANAGED BY PUPPET!
 <% if catalina_home and ! catalina_home.empty?  -%>
-export CATALINA_PID="<%= catalina_home %>/logs/tomcat.pid"
 export TOMCAT_HOME="<%= catalina_home %>"
 export CATALINA_HOME=$TOMCAT_HOME
 <% end -%>
@@ -11,3 +10,4 @@ export CATALINA_BASE="<%= catalina_base %>"
 JAVA_OPTS="<%= java_opts.join(" ") %>"
 export JAVA_OPTS
 <% end -%>
+export CATALINA_PID=$CATALINA_BASE/logs/tomcat.pid"
