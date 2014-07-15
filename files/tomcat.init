@@ -58,7 +58,7 @@ case "$1" in
     start
     ;;
   status)
-	  status java
+	  status -p $PID tomcat
 	  RETVAL=$?
 	  ;;
   *)
